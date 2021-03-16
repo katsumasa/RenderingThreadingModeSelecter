@@ -155,6 +155,11 @@ namespace Utj
         [MenuItem("Edit/RenderingThreadingMode/LegacyJobified", true)]
         public static bool IsLegacyJobifield()
         {
+            // Androidは選択不可
+            if(EditorUserBuildSettings.activeBuildTarget == BuildTarget.Android)
+            {
+                return false;
+            }           
             return true;
         }
 
