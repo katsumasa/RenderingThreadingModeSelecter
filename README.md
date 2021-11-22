@@ -52,7 +52,7 @@ iPhone7以前のようなコア数が比較的少ない(2コア前後)端末で�
 
 ![LegacyJobified](https://connect-prd-cdn.unity.com/20190130/e3f8bcbd-3fc8-47fd-8db1-ddb236ebef7b_jobified_rendering_0.png.2000x0x1.webp)
 
-複数のWorkerthreadがM共有バッファに作成に共有バッファ上のRCMDを元にintermediate graphics commands (IGCMD)を作成します。
+複数のWorkerthreadが共有バッファに作成に共有バッファ上のRCMDを元にintermediate graphics commands (IGCMD)を作成します。
 その後、Renderingthreadが読み取り、内部ClassであるGfxDeviceに転送し、GCMDに変換します。
 このモードはUnity5系時代のGraphicJobシステムの動作となります。
 このモードはAndroidプラットフォームでは動作しません。(NativeGraphicsJobsへフォールバックします)
@@ -63,7 +63,7 @@ iPhone7以前のようなコア数が比較的少ない(2コア前後)端末で�
 ![NativeGraphiceJobs](https://connect-prd-cdn.unity.com/20190130/b07d0d7a-c328-4ecc-b3c6-5437e4f769e8_graphics_jobs.png.2000x0x1.webp)
 
 MultiThreadedモードのRenderingthreadの処理をWorkerthreadへディスパッチします。
-MultiThreadedモードでRenderingthreadの処理不可が高い場合、こちらのモードを使用すると不可が改善する可能性があります。
+MultiThreadedモードでRenderingthreadの処理負荷が高い場合、こちらのモードを使用すると負荷が改善する可能性があります。
 </br></br></br>
 
 [NativeGraphiceJobsWithoutRenderThread](https://docs.unity3d.com/ScriptReference/Rendering.RenderingThreadingMode.NativeGraphicsJobsWithoutRenderThread.html)
